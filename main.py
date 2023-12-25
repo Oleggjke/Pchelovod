@@ -183,17 +183,7 @@ def register_assistant(tg_m_id, name):
                                        desc=gen_schedule_desc(info["phone"], info["assist"], info["tg_m_id"]))
     sheets.run_update_vals(cell, {"N":n_id})
  
-@dp.message_handler(commands=['remake'])
-async def remake_post(message: types.Message):
-    if message.from_user.first_name != 'Andrew':
-        return await message.answer("Я тебе не верю..")
- 
-    args = message.get_args().split()
-    for rw in args:
-        head = sheets.run_get_cell(int(rw), 1)
-        sheets.run_update_vals(head, {"L": ""})
-        await process_new_call(head, sheets.run_get_row_to_arr(head))
- 
+
 def get_edit_main_keyboard(m_id):
     keyboard = types.InlineKeyboardMarkup()
     keyboard.row(
