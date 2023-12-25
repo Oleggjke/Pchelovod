@@ -1,0 +1,8 @@
+aiogram==2.31.1 
+pygsheets==2.0.6
+google-api-python-client==2.111.0
+google-auth==2.25.2
+google-api-core==2.15.0
+googleapis-common-protos==1.62.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib==0.2.0
